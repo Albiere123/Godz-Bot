@@ -36,16 +36,4 @@ client.on("ready", () => {
 
 })
 
-client.on("guildMemberAdd", async member => {
-
-    let canal = client.channels.get("705554076338880664");
-	let embed = new Discord.MessageEmbed()
-    .setThumbnail(member.user.avatarURL())
-    .setTitle("Bem Vindo (👍)")
-    .setDescription("Bem Vindo Ao Servidor " + member.guild + "Espero que se Divirta.")
-    .setImage("https://tenor.com/view/welcome-greetings-hello-waving-penguin-gif-12289136")
-    canal.send(embed)
-	
-})
-
 client.login(config.token)
