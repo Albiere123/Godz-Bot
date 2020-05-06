@@ -1,0 +1,23 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "Fire | Sz",
+  "license": "ISC",
+  "dependencies": {
+    "bot.js": "0.0.1",
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security",
+    "jimp": "0.6.0",
+    "ms": "^2.1.2",
+    "simple-youtube-api": "^5.2.1",
+    "ytdl-core": "^2.0.1"
+  },
+  "devDependencies": {},
+  "description": ";-;"
+}
