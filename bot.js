@@ -17,7 +17,6 @@ let command = message.content.split(" ")[0];
 command = command.slice(config.prefix.length);
   try {
       let commandFile = require(`./commands/${command}.js`);
-      
       return commandFile.run(client, message, args);
   } catch (err) {
         console.error("Erro:" + err)

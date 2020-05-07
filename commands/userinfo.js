@@ -7,7 +7,7 @@ exports.run = async(client, message, args) => {
         .setTitle(`${message.author.username}`)
         .addField("ID", `${message.author.id}`)
         .addField("tag", `${message.author.tag}`)
-        .setThumbnail(message.author.displayavatarURL)
+        .setThumbnail(message.author.displayAvatarURL)
         message.channel.send(embed)
     }
     
