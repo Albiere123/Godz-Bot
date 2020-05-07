@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
     .get("https://nekos.life/api/v2/img/slap")
     if(!{body}) return message.reply("Tente Novamente..")
     let embed = new Discord.MessageEmbed()
-    .setAuthor(`${message.member.displayName} Deu um Tapa Em ${member.displayName}`)
+    .setAuthor(`${message.member.displayName} Deu um Tapa Em <@${member.displayName}>`)
     .setImage(body.url)
     msg.delete()
     message.channel.send(embed)
