@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const ms = require("ms");
 const config = require('./config.json');
 
 const client = new Discord.Client()
@@ -19,7 +18,6 @@ command = command.slice(config.prefix.length);
   try {
       let commandFile = require(`./commands/${command}.js`);
       
-      delete require.cache[require.resolve(`./commands/${command}.js`)];
       return commandFile.run(client, message, args);
   } catch (err) {
         console.error("Erro:" + err)
@@ -35,5 +33,6 @@ client.on("ready", () => {
 
 
 })
+
 
 client.login(config.token)
