@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first()
     if(!member)
       return message.reply("Por favor mencione um usuário válido !")
-    if(!member.kickable)
+      if(!member.kickable)
       return message.reply("Eu não posso kickar esse usuário, ele pode ter um cargo maior que o meu.")
     let reason = args.slice(1).join(' ')
     if(!reason) reason = "Nenhuma razão fornecida"

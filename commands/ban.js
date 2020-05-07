@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
       
   
       let embed1 = new Discord.MessageEmbed()
-      .setTitle(`Usuario Banido: ${member}`)
+      .setTitle(`Usuario Banido: ${member.displayName}`)
       .setDescription(`Banido Por: ${message.member.displayName} \nRazão: ${reason}`)
       .setColor("AQUA")
       message.channel.send(embed).then(msg => {

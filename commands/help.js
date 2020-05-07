@@ -23,6 +23,8 @@ exports.run = async (client, message, args) => {
     let embed2 = new Discord.MessageEmbed()
     .setTitle("Diversão")
     .addField(".Roleta", "Rode Uma Roleta!")
+    .addField(".slap", "Dê Um Tapa Em Alguém. [Comando alternativo: tapa]")
+    .addField(".hug", "Dê Um Abraço Em Alguém [Comando alternativo: abraço]")
     .setColor("AQUA");
 
     let embed3 = new Discord.MessageEmbed()

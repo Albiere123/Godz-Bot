@@ -16,6 +16,7 @@
     "jimp": "0.6.0",
     "ms": "^2.1.2",
     "simple-youtube-api": "^5.2.1",
+    "superagent": "^5.2.2",
     "ytdl-core": "^2.0.1"
   },
   "devDependencies": {},
