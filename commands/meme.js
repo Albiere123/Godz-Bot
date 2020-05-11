@@ -3,14 +3,40 @@ const sp = require('superagent')
 
 exports.run = async (client, message, args) => {
     let msg = await message.channel.send("Gerando..")
-    let {body} = await sp
-    .get('https://api-to.get-a.life/meme')
-    if(!{body}) return message.reply("Tente Novamente..")
-    let member = message.mentions.members.first();
-    if(!member) return message.channel.send("Mencione Alguém!")
+    let meme = ['https://i.pinimg.com/originals/28/cb/f7/28cbf720d25b6d29648d3f29a17cafaa.jpg',
+               'https://static.imagemwhats.com.br/content/assetz/uploads/2019/06/27-Memes-brasileiros-Memes-Memes-Engra%C3%A7ados-cole%C3%A7%C3%A3o-11668.jpg',
+                'https://pm1.narvii.com/6456/8bf99386ddbd65a723f329656ace4bcd7d9f5e7b_hq.jpg',
+               'https://a.wattpad.com/cover/176595939-288-k744774.jpg',
+               'https://cdn.joke4fun.com/media/posts/00000/dvqg7w43j0n2.jpg',
+               'https://cdn.joke4fun.com/media/posts/00000/od7jko1xp516.jpg',
+               'https://i.pinimg.com/736x/45/09/d3/4509d35609a4f23e72fca7deff205bda.jpg']
     let embed = new Discord.MessageEmbed()
-
-    .setImage(body.url)
+    .setTitle("Meme:")
+    .setImage(`${meme[Math.floor(Math.random() * meme.length)]}`)
     msg.delete()
-    message.channel.send(embed)
+    message.channel.send(embed).then(msg => {
+      let emoji = ['sla', 'errado']
+      msg.react("707043622347997185")
+      msg.react("707762832929980486")
+      
+      const filter = (reaction, user) => emoji.includes(reaction.emoji.name) && user.id !== client.user.id
+      const coletor = msg.createReactionCollector(filter, {max: 1})
+      coletor.on('collect',async (collect) => {
+        const emojii = collect.emoji.name || collect.emoji.id;
+        if(emojii == emoji[0]) {
+          let member = client.users.cache.get("506588141776535582")
+          member.send(`FeedBack: \`Gostei!\` De <@${message.author.id}>`)
+          message.channel.send("<:sla:707043622347997185> Enviado FeedBack Do Meme Para O Meu Criador.")
+          message.reactions.users.remove(message.author.id)          
+        }
+        if(emojii == emoji[1]) {
+          let member = client.members.cache.get("506588141776535582")
+          member.send(`FeedBack: \`Gostei!\` De <@${message.author.id}>`)
+          message.channel.send("<:sla:707043622347997185> Enviado FeedBack Do Meme Para O Meu Criador.")
+        } 
+      })
+      
+    }).catch(err=> {
+      console.error(err)
+    })
 }

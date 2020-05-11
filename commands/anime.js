@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const ms = require('mal-scraper')
-const tl = require ('google-translate-api')
 
 
 exports.run = async (client, message, args) => {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
+    "start": "node bot.js"
   },
   "keywords": [],
   "author": "Fire | Sz",
@@ -15,7 +16,11 @@
     "ms": "^2.1.2",
     "simple-youtube-api": "^5.2.1",
     "superagent": "^5.2.2",
-    "ytdl-core": "^2.0.1"
+    "ytdl-core": "^2.0.1",
+    "node": "^14.2.0",
+    "yt-search": "^1.1.2",
+    "node-opus": "^0.3.3",
+    "mal-scraper": "^2.6.8"
   },
   "devDependencies": {},
   "description": ";-;"
