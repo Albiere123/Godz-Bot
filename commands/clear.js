@@ -1,6 +1,8 @@
 const Discord = require('discord.js'); 
 
 exports.run = async (client, message, args) => {
+    if(!client.user.hasPermission("SEND_MESSAGES")) return message.author.send("Não tenho permissão para falar neste chat..")
+    if(!client.user.hhasPermission("MANAGE_MESSAGES")) return message.reply("Não Tenho Permissão, Ajeite Meus Cargos!")
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Você precisa da permissão \`Gerenciar Mensagens\`.`); 
     let clean = args.slice(0).join(' '); 
     if (clean < 2 || clean > 100) return message.reply(`Escreva um número de: \`2 à 100\`!`)

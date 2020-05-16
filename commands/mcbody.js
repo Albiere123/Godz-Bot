@@ -12,7 +12,7 @@ client.user.setActivity({name: `Com ${client.users.size} Usuarios.`, type: "WATC
 
       const embed = new Discord.MessageEmbed()
         .setTitle(`<a:Minecraft:706312241418469426> Corpo De: ${args[0]}`)
-        .setImage(`https://mc-heads.net/player/${args[0]}`)
+        .setImage(`https://mc-heads.net/body/${args[0]}`)
         .setFooter(message.author.tag, message.author.avatarURL)
         .setTimestamp(new Date())
         .setColor('AQUA')

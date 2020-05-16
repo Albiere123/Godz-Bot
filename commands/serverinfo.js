@@ -1,17 +1,36 @@
-const { MessageEmbed }= require("discord.js");
-    const moment = require("moment");
-    moment.locale('pt-BR');
-    exports.run = async (client, message, args) => {
-    let membros = message.guild.members.cache.size
-    let e = new MessageEmbed()
-    .setColor("AQUA")
-    .setTitle(` Informações do servidor.`, client.user.displayAvatarURL)
-    .addField(`📃 → **__Dono:__**`, ` <@${message.guild.ownerID}>`, true)
-    .addField(`📃 → **__Nome do servidor:__**`, `\`${message.guild.name}\``, true)
-    .addField(`📃 → **__ID do servidor:__**`, ` \`${message.guild.id}\``, true)
-    .addField(`📃 → **__Criado em:__**`, `\`${moment(message.guild.createdAt).format('L')}\``, true)
-    .addField(`📃 → **__Quantidade de membros:__**`, ` \`${membros}\``, true)
-    .addField(`📃 → **__Região do servidor:__**`,  `\`${message.guild.region}\``.replace("`brazil`", ":flag_br: `Brazil`"), true);
-   
-    message.channel.send(e);
+const Discord = require('discord.js')
+
+const moment = require('moment')
+moment.locale('pt-br')
+
+module.exports.run = async(client, message, args) => {
+    const date = message.guild.createdAt
+    const joined = message.member.joinedAt
+
+    const region = {
+      brazil: ':flag_br: Brazil'
     }
+
+    const embed = new Discord.MessageEmbed()
+      .setColor(client.displayHexColor === '#000000' ? '#ffffff' : client.displayHexColor)
+      .setThumbnail(message.guild.iconURL())
+      .addField(`Estatisticas`, `**🎫 | Nome: \`${message.guild.name}\`**
+**📧 | id**: \`${message.guild.id}\`
+**👑 Dono(a)**: ${message.guild.owner}
+**🌏 Região**: ${region[message.guild.region]}
+**💻 Canais**: \`${message.guild.channels.cache.size}\`
+**💼 Cargos**: \`${message.guild.roles.cache.size}\``)
+      .setAuthor('🔍 Informações do servidor')
+      .addField('Membros', `**😀 | Humanos**: \`${message.guild.members.cache.filter(member => !member.user.bot).size}\`
+**🤖 | Bots**: \`${message.guild.members.cache.filter(member => member.user.bot).size}\``)
+
+      .addField('Datas', `**📅 | Criado em**: \`${moment(message.guild.createdAt).format('L')}\`
+**📆 |Você entrou**: \`${moment(message.member.joinedAt).format('L')}\``)
+
+      .setFooter('')
+      .setTimestamp()
+
+    message.channel.send(embed)
+   
+}
+  

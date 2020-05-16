@@ -47,9 +47,10 @@ module.exports.run = async (client, message, args) => {
             const emojii = collect.emoji.name || collect.emoji.id;
     
             if (emojii === emoji[0]) {
+               collect.delete()
                msg.edit(embed1)
                member.ban(reason)
-               message.reactions.removeAll(message.author.id)
+               
                
             }
           
