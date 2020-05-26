@@ -19,7 +19,7 @@ fs.readdir("./comandos/", (err, files) => {
         client.commands.set(props.help.name, props);
       props.help.aliases.forEach(alias => {
         client.aliases.set(alias, props.help.name);
-      });
+      });// assim oh
      });
     }
   ['informativos', 'administrativos', 'diversao', 'economia', 'jogos', 'musica'].forEach(x => load(x))
