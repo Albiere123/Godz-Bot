@@ -1,29 +1,30 @@
 {
-  "name": "bot",
-  "version": "1.0.0",
-  "main": "bot.js",
+  "name": "Leonard",
+  "version": "1.0.2",
+  "description": "Um Bot geral em constante desenvolvimento!",
+  "main": "server.js",
   "scripts": {
-    "start": "node bot.js"
-  },
-  "keywords": [],
-  "author": "Fire | Sz",
-  "license": "ISC",
-  "dependencies": {
-    "bot.js": "0.0.1",
-    "discord.js": "12.2.0",
-    "ms": "^2.1.2",
-    "superagent": "^5.2.2",
-    "mal-scraper": "^2.6.8",
-    "google-translate-free": "^2.4.5",
-    "mathjs": "^6.6.5",
-    "moment": "^2.25.3",
-    "quick.db": "^7.1.1",
-    "sqlite": "^4.0.7",
-    "parse-ms": "^2.0.0"
+    "start": "node server.js"
   },
   "engines": {
     "node": "12.x"
   },
-  "devDependencies": {},
-  "description": ";-;"
+  "author": "</Faker>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "google-translate-free": "^2.4.5",
+    "moment": "^2.26.0",
+    "node-opus": "^0.3.3",
+    "opusscript": "^0.0.7",
+    "os": "^0.1.1",
+    "parse-ms": "^2.1.0",
+    "superagent": "^5.2.2",
+    "yt-search": "^1.1.2",
+    "ytdl-core": "^2.1.4",
+    "quick.db": "^7.1.1",
+    "erela.js": "^1.1.8",
+    "express": "^4.17.1",
+    "yt-api": "0.2.7"
+  }
 }
